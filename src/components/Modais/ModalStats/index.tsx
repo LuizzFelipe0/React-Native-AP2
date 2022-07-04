@@ -44,7 +44,7 @@ export const ModalStats=({ModalVisibility,setModalVisibility,CharacterId}:ModalS
     useEffect(() => {
         setLoading(true);
              auth().then(async(res)=>{
-                await apiService.getCharacterById(res.time, res.publicKey, res.hash,CharacterId).then((res) => {
+                await apiService.getCharacters(res.time, res.publicKey, res.hash).then((res) => {
                     SetCharacter(res.data.results);
                 }).catch(() => {
                     console.log("Erro")

@@ -6,9 +6,10 @@ import apiService from '../../services/requests'
 
 import { styles } from "./styles";
 
-export const Login = () => {
-    const [email, SetEmail] = useState<string>("pedro@gmail.com");
-    const [password, setPassword] = useState<string>("123456");
+export const Registration = () => {
+    const [email, SetEmail] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [username, setUsername] = useState<string>("");
 
     async function handleSignIn() {
         if (email === "pedro@gmail.com" && password === "123456") {
@@ -32,11 +33,12 @@ export const Login = () => {
             <Text style={styles.title}>
                 Bem-vindo(a)
             </Text>
-            <TextInput style={styles.input} placeholder={"Email"} placeholderTextColor={'#808080'} onChangeText={e => SetEmail} />
-            <TextInput style={styles.input} placeholder={"Password"} placeholderTextColor={'#808080'} onChangeText={e => setPassword} />
+            <TextInput style={styles.input} placeholder={"Username"} onChangeText={e => setUsername} />
+            <TextInput style={styles.input} placeholder={"Email"} onChangeText={e => SetEmail} />
+            <TextInput style={styles.input} placeholder={"Password"} onChangeText={e => setPassword} />
             <TouchableOpacity style={[styles.button, { marginBottom: 30 }, { marginTop: 30 }]} onPress={handleSignIn}>
                 <Text style={styles.buttonText}>
-                    Continuar
+                    Cadastrar-se
                 </Text>
             </TouchableOpacity>
 
