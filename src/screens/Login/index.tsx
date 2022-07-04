@@ -10,7 +10,7 @@ export const Login = () => {
     const [email, SetEmail] = useState<string>("pedro@gmail.com");
     const [password, setPassword] = useState<string>("123456");
 
-    const [characters, setCharacters] = useState<any>([])
+
 
     async function handleSignIn() {
         if (email === "pedro@gmail.com" && password === "123456") {
@@ -29,25 +29,6 @@ export const Login = () => {
         }
     }
 
-    async function handleGetCharacters() {
-        try {
-            const publicKey = await AsyncStorage.getItem("@publicKey");
-            const privateKey = await AsyncStorage.getItem("@privateKey");
-            const time = Number(new Date());
-            const hash = md5(time + privateKey + publicKey)
-
-            const response = await apiService.getCharacters(time, publicKey, hash);
-
-            if (response) {
-                setCharacters(response)
-            }
-
-        } catch (error) {
-            console.log(error);
-
-        }
-    }
-
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
@@ -61,11 +42,6 @@ export const Login = () => {
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={[styles.button, { marginBottom: 30 }, { marginTop: 30 }]} onPress={handleGetCharacters}>
-                <Text style={styles.buttonText}>
-                    clica dps
-                </Text>
-            </TouchableOpacity>
         </View>
 
     )
