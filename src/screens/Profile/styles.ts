@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
   image: {
     width: 260,
     height: 60,
+    marginLeft: 30
   },
   text: {
     color: '#fff',
@@ -23,7 +24,7 @@ export const styles = StyleSheet.create({
     borderWidth: 2.5,
     borderColor: "#fff",
     borderRadius: 75,
-    marginTop:'10%'
+    marginTop: 10
   },
   ListItem: {
     width: 150,
@@ -41,6 +42,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "red",
     paddingHorizontal: 15,
     borderWidth: 2.5,
-    borderColor:'#FFF',
-  }
+    borderColor: '#FFF',
+  },
+  
 })
