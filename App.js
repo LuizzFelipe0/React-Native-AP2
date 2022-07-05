@@ -4,7 +4,7 @@ import { Profile } from './src/screens/Profile';
 
 
 const App = () => {
-    return (<Marvel/>
+    return (<Profile/>
       
 
 
