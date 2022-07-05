@@ -68,7 +68,6 @@ export function ComicList(){
              auth().then(async(res)=>{
                 await apiService.getComicsByIdOfHero(res.time, res.publicKey, res.hash,1009664).then((res) => {
                     setComicsList(res.data.data.results);
-                    console.log(res.data.data.results.prices)
                 }).catch(() => {
                     console.log("Erro")
                 }).finally(() => setLoading(false));            
