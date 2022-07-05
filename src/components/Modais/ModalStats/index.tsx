@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
 import { ModalProps,Modal, View, Text, TouchableOpacity, ScrollView, Image, Button } from "react-native";
-import { character } from "../../../screens/MarvelList";
+import { character, charactersList } from "../../../screens/MarvelList";
 import { styles } from "./styles";
 import md5 from 'md5';
 import apiService from '../../../services/requests'
@@ -15,7 +15,6 @@ interface ModalStatsProps extends ModalProps{
         setModalVisibility: React.Dispatch<React.SetStateAction<boolean>>,
         CharacterId:Number,
 }
-
 
 export const ModalStats=({ModalVisibility,setModalVisibility,CharacterId}:ModalStatsProps)=>{
 
@@ -31,6 +30,14 @@ export const ModalStats=({ModalVisibility,setModalVisibility,CharacterId}:ModalS
             extension:""
         }
     })
+
+
+    const characterList: charactersList={
+        id:character.id,
+        name:character.name,
+
+    }
+
 
     async function auth() {
         
@@ -70,7 +77,7 @@ export const ModalStats=({ModalVisibility,setModalVisibility,CharacterId}:ModalS
                     <>
                         <View style={styles.titleContainer}>
                             <Text style={styles.title}>
-                                {character.name}
+                                Nome:{character.name}
                             </Text>
                             <TouchableOpacity onPress={() => setModalVisibility(false)} style={{ alignContent: "flex-end", width: "10%" }}>
                                 <Image
