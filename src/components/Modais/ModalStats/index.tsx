@@ -32,11 +32,7 @@ export const ModalStats=({ModalVisibility,setModalVisibility,CharacterId}:ModalS
     })
 
 
-    const characterList: charactersList={
-        id:character.id,
-        name:character.name,
 
-    }
 
 
     async function auth() {
@@ -51,8 +47,10 @@ export const ModalStats=({ModalVisibility,setModalVisibility,CharacterId}:ModalS
     useEffect(() => {
         setLoading(true);
              auth().then(async(res)=>{
-                await apiService.getCharacters(res.time, res.publicKey, res.hash).then((res) => {
-                    SetCharacter(res.data.results);
+                await apiService.getCharacterById(res.time, res.publicKey, res.hash,CharacterId).then((res) => {
+                    SetCharacter(res.data);
+                    console.log(res.data.results)
+                    console.log(character.thumbnail.path)
                 }).catch(() => {
                     console.log("Erro")
                 }).finally(() =>

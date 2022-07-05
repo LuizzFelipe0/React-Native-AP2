@@ -22,9 +22,18 @@ export function HeroCard({ item,setModalVisibility,setCharacterId, ...rest } : H
             onPress={()=>HandleOpenModal()}
             {...rest}
         >
+            <Image source={{
+                uri:item.thumbnail.path+"/standard_small."+item.thumbnail.extension
+            }} style={styles.image}
+            
+            />
             <Text style={styles.text}>
                 {item.name}
+
             </Text>
+            
         </TouchableOpacity>
+
+        
     )
 }

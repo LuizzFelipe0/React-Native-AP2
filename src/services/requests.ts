@@ -13,6 +13,14 @@ const getCharacterById = (time: number, publicKey: string, hash: string,characte
     return api.get(`characters/${characterId}?ts=${time}&apikey=${publicKey}&hash=${hash}`)
 }
 
+const getComics = (time: number, publicKey: string, hash: string) => {
+    return api.get(`comics?ts=${time}&apikey=${publicKey}&hash=${hash}&limit=100`)
+}
+
+const getComicsByIdOfHero = (time: number, publicKey: string, hash: string,id:Number) => {
+    return api.get(`comics?ts=${time}&apikey=${publicKey}&hash=${hash}&limit=100&startYear=2019`)
+}
+
 export default {
-    getCharacters,getCharacterById,getCharactersByInitial
+    getCharacters,getCharacterById,getCharactersByInitial,getComics,getComicsByIdOfHero
 }

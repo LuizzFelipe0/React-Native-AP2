@@ -4,29 +4,36 @@ import { styles } from './styles'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import md5 from 'md5';
 import apiService from '../../services/requests'
-import { HeroCard } from '../../components/HeroCard';
+import { ComicCard } from '../../components/ComicCard';
 import {ModalStats} from '../../components/Modais/ModalStats'
-import { ScrollView } from 'react-native-gesture-handler';
+
 
 export interface Images{
     path:string,
     extension:string
 }
-
-export interface character{
+export interface ComicPrice{
+    price:Number,
+}
+export interface comic{
     id: Number,
-    name:string,
+    title:string,
     description:string,
-    modified:Date,
+    prices:[
+        ComicPrice,
+    ],
     thumbnail:{
         "path":string,
         "extension":string
     }
 }
 
-export interface charactersList{
+export interface comicList{
     id:Number,
-    name:string,
+    title:string,
+    prices:[
+        ComicPrice,
+    ],
     thumbnail:{
         "path":string,
         "extension":string
@@ -34,13 +41,13 @@ export interface charactersList{
 }
     
 
-export function MarvelList(){
+export function ComicList(){
 
-    const [charactersList, setCharactersList] = useState<charactersList[]>([]);
-    const [characterId, setCharacterId] = useState<Number>()
+    const [comicsList, setComicsList] = useState<comicList[]>([]);
+    const [comicId, setComicId] = useState<Number>()
     const [loading, setLoading] = useState<boolean>(true);
     const [reload, setReload] = useState<boolean>(false);
-    const [modalVisibility,setModalVisibility]=useState<boolean>(true);
+    //const [modalVisibility,setModalVisibility]=useState<boolean>(true);
 
 
     //apagar depois
@@ -59,9 +66,9 @@ export function MarvelList(){
         setLoading(true);
         
              auth().then(async(res)=>{
-                await apiService.getCharacters(res.time, res.publicKey, res.hash).then((res) => {
-                    setCharactersList(res.data.data.results);
-                    console.log(res.data.data.limit)
+                await apiService.getComicsByIdOfHero(res.time, res.publicKey, res.hash,1009664).then((res) => {
+                    setComicsList(res.data.data.results);
+                    console.log(res.data.data.results.prices)
                 }).catch(() => {
                     console.log("Erro")
                 }).finally(() => setLoading(false));            
@@ -76,7 +83,7 @@ export function MarvelList(){
                 <Text style={styles.title}>...Loading...</Text>
                 : 
                 <FlatList
-                    data={charactersList}
+                    data={comicsList}
                     refreshControl={
                         <RefreshControl
                         refreshing={loading}
@@ -86,21 +93,21 @@ export function MarvelList(){
                     
                     renderItem={({ item }) => {
                         
-                        return <HeroCard
-                            setModalVisibility={setModalVisibility}
-                            setCharacterId={setCharacterId}
+                        return <ComicCard
+                            //setModalVisibility={setModalVisibility}
+                            setComicId={setComicId}
                             item={item}
                         />
                     }}
                     
                 />
             }
-            {characterId && <ModalStats
-                CharacterId={characterId}
-                ModalVisibility={modalVisibility}
+            {/* {comicId && <ModalStats
+                ComicId={comicId}
+               ModalVisibility={modalVisibility}
                 setModalVisibility={setModalVisibility}
             />
-            }
+            } */}
         </View>
     )
 }

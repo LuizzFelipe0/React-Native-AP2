@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     image: {
-        tintColor: "#f00",
+        borderRadius:200,
         width: 50, 
         height: 50
     }
