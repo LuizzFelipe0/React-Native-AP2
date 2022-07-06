@@ -40,7 +40,6 @@ export const styles=StyleSheet.create({
         marginTop: 30,
         borderRadius: 200,
         width: 300,
-        placeholderTextColor:'#808080'
     },
     button: {
         backgroundColor:'#E60023',

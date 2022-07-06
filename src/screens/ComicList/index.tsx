@@ -6,6 +6,7 @@ import md5 from 'md5';
 import apiService from '../../services/requests'
 import { ComicCard } from '../../components/ComicCard';
 import {ModalStats} from '../../components/Modais/ModalStats'
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 export interface Images{
@@ -20,7 +21,7 @@ export interface comic{
     title:string,
     description:string,
     prices:[
-        ComicPrice,
+        {price}
     ],
     thumbnail:{
         "path":string,
@@ -76,12 +77,12 @@ export function ComicList(){
 
         return( 
         <View style={styles.container}>
-            
             <Text style={styles.title}>Herois</Text>
              {loading ? 
                 <Text style={styles.title}>...Loading...</Text>
                 : 
                 <FlatList
+                    stickyHeaderHiddenOnScroll={true}
                     data={comicsList}
                     refreshControl={
                         <RefreshControl

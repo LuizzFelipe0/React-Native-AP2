@@ -6,3 +6,10 @@ export const api = axios.create({
         'Content-Type': 'application/json',
     }
 }) 
+
+export const apiAuth = axios.create({
+    baseURL: "https://serverest.dev/",
+    headers: {
+        'Content-Type': 'application/json',
+    }
+}) 

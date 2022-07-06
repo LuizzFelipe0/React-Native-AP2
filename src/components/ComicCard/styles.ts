@@ -3,12 +3,13 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
-        padding: 10,
+        padding: 5,
         borderRadius: 20,
         alignItems: 'center',
+        alignSelf:'center',
         marginVertical: 5,
         flexDirection: "column",
-        width:300 ,
+        width:300,
     },
     button: {
         backgroundColor: '#ED1D24',
@@ -33,8 +34,10 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     image: {
-        borderRadius:20,
+        borderRadius:5,
         width: 168, 
-        height: 254
+        height: 254,
+        borderColor:'#ED1D24',
+        borderWidth:2,
     }
 })

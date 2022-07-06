@@ -20,7 +20,6 @@ export function ComicCard({ item,setComicId, ...rest } : ComicCardProps ) {
         <View style={styles.container}>
             <Text style={styles.title}>
                 {item.title}
-
             </Text>
         <Image source={{
             uri:item.thumbnail.path+"/portrait_fantastic."+item.thumbnail.extension
