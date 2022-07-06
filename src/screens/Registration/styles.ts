@@ -39,7 +39,7 @@ export const styles=StyleSheet.create({
         padding: Platform.OS === 'ios' ? 15 : 10,
         marginTop: 30,
         borderRadius: 200,
-        width: 300
+        width: 300,
     },
     button: {
         backgroundColor:'#E60023',

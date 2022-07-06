@@ -1,14 +1,12 @@
 import React from 'react';
-import { Marvel } from './src/screens/Marvel';
-import { Profile } from './src/screens/Profile';
+import { StyleSheet, Text, View } from 'react-native';
+import { Login } from './src/screens/Login';
+import { MarvelList } from './src/screens/MarvelList';
+import { ComicList } from './src/screens/ComicList';
+import { Registration } from './src/screens/Registration';
 
-
-const App = () => {
-    return (<Profile/>
-      
-
-
+export default function App() {
+  return (
+    <Registration/>
   )
 }
-
-export default App
