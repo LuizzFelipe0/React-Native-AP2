@@ -1,3 +1,4 @@
+import { user } from "../screens/Registration";
 import { apiAuth } from "./http";
 
 const Login = (loginData)=>{
@@ -5,7 +6,7 @@ const Login = (loginData)=>{
 }
 
 const Registration = (cadastroData)=>{
-    return apiAuth.post(`usuarios`,cadastroData)
+    return apiAuth.post(`usuario`,cadastroData)
 }
 
 

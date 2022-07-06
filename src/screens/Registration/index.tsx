@@ -14,43 +14,34 @@ export interface user{
 export const Registration = () => {
     const [connectData, setConnectData] = useState<user>();
     const [error, setError] = useState<string>();
-    function handleSubmit() {
-        Auth.Registration(connectData).then((res) => {
-            setConnectData({...connectData, username: res.data.username});
-        }).catch(error => console.log(error));
+
+    function handleRegistration() {
+        Auth.Registration(connectData).then().catch(error => console.log("oiiiiiiiiiii"));
+        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
     };
 
-    useEffect(() => {
-        if(connectData?.username) {
-            Auth.Registration(connectData).then(res => {
-                setError(undefined);
-                //navigation.navigate('Login');
-            }).catch(error => {
-                console.error("error ao salvar no AsyncStorage", error);
-            });
-        }
-    })
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
                 Bem-vindoa(a)
             </Text>
             <TextInput
-                                onChangeText={(text) => setConnectData({...connectData, username:text})}
-                                style={styles.input}
-                                placeholder="Username"
+                    onChangeText={(text) => setConnectData({...connectData, username:text})}
+                        style={styles.input}
+                        placeholder="Username"
                             />
             <TextInput
-                                onChangeText={(text) => setConnectData({...connectData, email:text})}
-                                style={styles.input}
-                                placeholder="Email"
+                    onChangeText={(text) => setConnectData({...connectData, email:text})}
+                        style={styles.input}
+                        placeholder="Email"
                             />
             <TextInput
-                                onChangeText={(text) => setConnectData({...connectData, username:text})}
-                                style={styles.input}
-                                placeholder="Password"
+                    onChangeText={(text) => setConnectData({...connectData, password:text})}
+                        style={styles.input}
+                        placeholder="Password"
                             />
-            <TouchableOpacity style={[styles.button, { marginBottom: 30 }, { marginTop: 30 }]} onPress={handleRegistrationub}>
+
+            <TouchableOpacity style={[styles.button, { marginBottom: 30 }, { marginTop: 30 }]} onPress={handleRegistration}>
                 <Text style={styles.buttonText}>
                     Cadastrar-se
                 </Text>
