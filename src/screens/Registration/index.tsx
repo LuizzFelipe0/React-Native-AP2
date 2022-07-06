@@ -24,12 +24,12 @@ export const Registration = () => {
         if(connectData?.username) {
             Auth.Registration(connectData).then(res => {
                 setError(undefined);
-                navigation.navigate('Login');
+                //navigation.navigate('Login');
             }).catch(error => {
                 console.error("error ao salvar no AsyncStorage", error);
             });
         }
-
+    })
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
