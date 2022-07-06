@@ -44,5 +44,7 @@ export const styles = StyleSheet.create({
     borderWidth: 2.5,
     borderColor: '#FFF',
   },
-  
+  button:{
+    
+  }
 })
