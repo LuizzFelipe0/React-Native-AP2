@@ -11,12 +11,13 @@ export const styles = StyleSheet.create({
   image: {
     width: 260,
     height: 60,
-    marginLeft: 30
+    marginLeft: 42.5
   },
   text: {
     color: '#fff',
     fontSize: 24,
     fontWeight: 'bold',
+    margin:15
   },
   avatar: {
     width: 150,
@@ -44,7 +45,5 @@ export const styles = StyleSheet.create({
     borderWidth: 2.5,
     borderColor: '#FFF',
   },
-  button:{
-    
-  }
+
 })
