@@ -8,6 +8,6 @@ import { Registration } from './src/screens/Registration';
 
 export default function App() {
   return (
-    <ComicList/>
+    <Registration/>
   )
 }

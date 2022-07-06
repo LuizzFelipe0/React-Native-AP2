@@ -5,9 +5,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import md5 from 'md5';
 import apiService from '../../services/requests'
 import { ComicCard } from '../../components/ComicCard';
-import {ModalStats} from '../../components/Modais/ModalStats'
+import {ModalStats} from '../../components/Modais/ModalStats';
 import { ScrollView } from 'react-native-gesture-handler';
-
 
 export interface Images{
     path:string,
@@ -41,7 +40,6 @@ export interface comicList{
     }
 }
     
-
 export function ComicList(){
 
     const [comicsList, setComicsList] = useState<comicList[]>([]);
@@ -73,7 +71,6 @@ export function ComicList(){
                 }).finally(() => setLoading(false));            
              })
     }, [reload]);
-
         return( 
         <View style={styles.container}>
             <Text style={styles.title}>Herois</Text>
