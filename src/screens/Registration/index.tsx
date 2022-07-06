@@ -13,7 +13,7 @@ export interface user{
 
 export const Registration = () => {
     const [connectData, setConnectData] = useState<user>();
-    
+    const [error, setError] = useState<string>();
     function handleSubmit() {
         Auth.Registration(connectData).then((res) => {
             setConnectData({...connectData, username: res.data.username});
