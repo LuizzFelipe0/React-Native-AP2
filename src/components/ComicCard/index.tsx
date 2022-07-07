@@ -11,11 +11,6 @@ interface ComicCardProps extends TouchableOpacityProps {
 
 export function ComicCard({ item,setComicId, ...rest } : ComicCardProps ) {
 
-    function HandleOpenModal () {
-        //setModalVisibility(true);
-        setComicId(item.id);
-    }
-
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
@@ -27,10 +22,10 @@ export function ComicCard({ item,setComicId, ...rest } : ComicCardProps ) {
             }} style={[styles.image,{marginTop:15}]}
             />
         <Text style={[styles.text,{color:'#000'},{marginTop:15}]}>
-              Price: ${(item.prices[0].price)}{'\n'}
-              Page Count: ${(item.pageCount)}{'\n'}
-              Preço: ${(item.prices[0].price)}{'\n'}
-              Preço: ${(item.prices[0].price)}{'\n'}
+              Price:{'\n'}<Text style={{color:'#ED1D24'}}>${(item.prices[0].price)}{'\n'}{'\n'}</Text>
+              Page Count:{'\n'}<Text style={{color:'#ED1D24'}}>{(item.pageCount)} pages{'\n'}{'\n'}</Text>
+              Release Date: {'\n'}<Text style={{fontSize:11,color:'#ED1D24'}}>{(item.dates[0].date)}{'\n'}{'\n'}</Text>
+              Format:{'\n'}<Text style={{color:'#ED1D24'}}>{(item.format)}{'\n'}</Text>
         </Text>
         
         </View>

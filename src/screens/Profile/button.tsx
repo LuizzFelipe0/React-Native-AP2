@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32.5,
     borderRadius: 5,
     backgroundColor: 'red',
-    marginBottom:45
+    marginBottom:45,
+    height: 50
   },
   text: {
     fontSize: 17.5,
-    lineHeight: 12.5,
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'white',

@@ -36,7 +36,7 @@ export const Home = () => {
         </Text>
         <Image source={LogoMarvel} style={styles.image}/>
         <Text style={styles.descricao}>
-            Neste aplicativo você pode acessar os personagens, sua imagem e uma breve descrição dos mesmos.
+            Neste aplicativo você pode acessar os personagens e seus comics.
         </Text>
         <Image source={UniversoMarvel} style={styles.imageUniverso}/>
 

@@ -58,7 +58,7 @@ export const Profile = () => {
             {image && <Image source={{ uri: image }} style={styles.avatar}  />}
             <Text style={styles.text}>Nome: {nome}</Text>
             <Text style={styles.text1}>Email:{email}</Text>
-            <TextInput style={styles.input} placeholder={"Descrição"} placeholderTextColor={'#808080'}  />
+            {/* <TextInput style={styles.input} placeholder={"Descrição"} placeholderTextColor={'#808080'}  /> */}
 
         </View>
         <Botao onPress={pickImage} />

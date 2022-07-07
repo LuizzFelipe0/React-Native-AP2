@@ -40,7 +40,7 @@ function MyTabs() {
                         <Image 
                             resizeMode='contain'
                             style={{width:30, tintColor:'#fff'}}
-                            source={heromask}
+                            source={comicicon}
                         />
                     )
                 }}
@@ -51,7 +51,7 @@ function MyTabs() {
                         <Image 
                             resizeMode='contain'
                             style={{width:30, tintColor:'#fff'}}
-                            source={comicicon}
+                            source={heromask}
                         />
                     )
                 }}
