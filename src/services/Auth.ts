@@ -1,14 +1,19 @@
 import { apiAuth } from "./http";
 
-const Login = (loginData)=>{
-    return apiAuth.post(`login`,loginData)
+const Registration = (user)=>{
+
+    return apiAuth.post(`usuarios`,user)
 }
 
-const Registration = (cadastroData)=>{
-    return apiAuth.post(`usuarios`,cadastroData)
+const Login = (user)=>{
+
+    return apiAuth.post(`login`,user)
 }
 
+const FindUserByEmail = (email:string)=>{
+    return apiAuth.get(`usuarios?email=${email}`)
+}
 
 export default {
-    Login, Registration
+    Registration,Login,FindUserByEmail
 }
