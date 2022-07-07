@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
-import { View, Text, TouchableOpacity, TextInput, ScrollView, } from "react-native";
+import React, {useState } from "react";
+import { View, Text, TouchableOpacity, TextInput} from "react-native";
 import { styles } from "./styles";
 import Auth from "../../services/Auth";
 
@@ -13,7 +13,6 @@ export interface user{
 
 export const Registration = () => {
     const [connectData, setConnectData] = useState<user>();
-    const [error, setError] = useState<string>();
 
     function handleSubmit() {
         connectData.administrador="false"
