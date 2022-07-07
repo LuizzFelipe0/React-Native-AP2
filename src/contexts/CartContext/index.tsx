@@ -20,3 +20,13 @@ export const CartContext=createContext<CartContextType>({
     }],
     setComicList:(ComicList:comicList[])=>{}
 })
+
+export const CartProvider = ({children}) =>{
+    const [ComicList,setComicList] = useState<comicList[]>([])
+
+    useEffect(()=>{
+        console.log(ComicList);
+    },[ComicList])
+
+    //return()
+}

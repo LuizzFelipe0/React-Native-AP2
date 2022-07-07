@@ -16,9 +16,8 @@ export const Registration = ({navigation}) => {
 
     function handleSubmit() {
         connectData.administrador="false"
-        Auth.Registration(connectData).then(()=>console.log("deu certo")).catch(error => console.log(error.response.data));
+        Auth.Registration(connectData).then(()=>console.log("deu certo"),navigation.navigate("Login")).catch(error => console.log(error.response.data));
     };
-
     return (
         <View style={styles.container}>
             <Text style={styles.title}>

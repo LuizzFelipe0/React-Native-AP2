@@ -1,22 +1,19 @@
 import React, { useState, } from "react";
 import { View, Text, TouchableOpacity, TextInput, } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import md5 from 'md5';
-import apiService from '../../services/requests'
 import { styles } from "./styles";
 import Auth from "../../services/Auth";
-//import { user } from "../Registration";
-
+import { useContext } from "react";
+import { UserInfoContext } from "../../contexts/UserInfoProvider";
 export interface user{
-    nome:string,
     email:string,
     password:string,
 }
-export const Login = () => {
+export const Login = ({navigation}) => {
     const [connectData, setConnectData] = useState<user>();
     const publicKey = "77e494c4516148e6430389b7f72228fc";
     const privateKey = "8368e5953e101d85c5ba546899972007fc3032fb";
-
+    const user = useContext(UserInfoContext).setUser
     async function handleSignIn() {
     
         Auth.Login(connectData).then(()=>{
@@ -30,6 +27,8 @@ export const Login = () => {
             } catch (error) {
                 console.error("error ao salvar no AsyncStorage", error);
             }
+            user([{email:connectData.email,password:connectData.password}])
+        navigation.navigate("Home")
         }
     return (
         <View style={styles.container}>
@@ -51,7 +50,6 @@ export const Login = () => {
                     Continuar
                 </Text>
             </TouchableOpacity>
-
         </View>
 
     )
