@@ -21,7 +21,7 @@ export const Registration = ({navigation}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>
-                Bem-vindoa(a)
+                Bem-vindo(a)
             </Text>
             <TextInput
                                 onChangeText={(text) => setConnectData({...connectData, nome:text})}
@@ -44,7 +44,7 @@ export const Registration = ({navigation}) => {
                 </Text>
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.button}>
-                <Text style={styles.buttonText}>Already have an account? Login here!</Text>
+                <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
         </View>
     )
