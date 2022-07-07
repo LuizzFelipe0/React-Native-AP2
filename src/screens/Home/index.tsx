@@ -3,27 +3,18 @@ import {View, Text, Image} from "react-native";
 import { styles } from "./styles";
 import LogoMarvel from "../../assets/images/Marvel_Logo.png";
 import UniversoMarvel from "../../assets/images/Universo_Marvel.png";
-import { useContext } from "react";
-import { UserInfoContext } from "../../contexts/UserInfoProvider";
-import Auth from "../../services/Auth";
-import { user } from "../Registration";
-export const Home = () => {
-    const email = useContext(UserInfoContext).user[0].email
-    const [greetings, setGreetings] = useState<string>('');
-    const [nome,setNome] = useState<string>();
 
-    useEffect (() => {    
-        Auth.FindUserByEmail(email).then((res) => {
-            setNome(res.data.usuarios[0].nome);
-            console.log(res.data.usuarios[0].nome)
-        })
+export const Home = () => {
+
+    const [greetings, setGreetings] = useState<string>('');
+    useEffect (() => { 
         const currentHour = new Date().getHours();
         if (currentHour < 12){
-            setGreetings('Bom dia '+nome)
+            setGreetings('Bom dia')
         }else if (currentHour >= 12 && currentHour < 18){
-            setGreetings ('Boa tarde '+nome)
+            setGreetings ('Boa tarde')
         } else {
-            setGreetings('Boa noite '+nome)
+            setGreetings('Boa noite')
         }
     }, []);
     

@@ -30,6 +30,7 @@ export function ComicCard({ item,setComicId, ...rest } : ComicCardProps ) {
             onPress={()=>HandleOpenModal()}
             {...rest}
         >
+            
             <Text style={styles.text}>
               ${(item.prices[0].price)}
             </Text>

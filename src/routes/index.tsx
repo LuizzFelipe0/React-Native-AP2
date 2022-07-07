@@ -28,7 +28,7 @@ function MyTabs() {
 
 function MyStack() {
     return (
-        <Stack.Navigator initialRouteName="Registration"
+        <Stack.Navigator initialRouteName="Login"
             screenOptions={{
                 headerShown: false
             }}>
@@ -45,4 +45,15 @@ export const Router = () => {
             <MyStack />
         </NavigationContainer>
     )
+}
+
+{/* const RouteStack = createStackNavigator();
+
+ export const Router = () =>{ 
+     return (
+        <RouteStack.Navigator screenOptions={{headerTransparent: true, headerShown:false}}>
+           <RouteStack.Screen name="Login" component={Login}/>
+       </RouteStack.Navigator>
+    )
+ } */
 }

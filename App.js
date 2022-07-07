@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import { Router } from './src/routes';
+<<<<<<< Updated upstream
+
+=======
 import { UserInfoProvider } from './src/contexts/UserInfoProvider';
 import Splash from "./src/assets/images/splash.png";
 import AnimatedSplash from "react-native-animated-splash-screen";
 
 
-const App = () => {
 
+const App = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   useEffect(() => {
@@ -14,6 +17,13 @@ const App = () => {
         setIsLoaded(true);
     }, 2000)
   });
+>>>>>>> Stashed changes
+
+  return (
+<<<<<<< Updated upstream
+    <Router/>
+    // <Registration/>
+=======
     <>
     <AnimatedSplash>
       isLoaded={isLoaded}
@@ -30,4 +40,6 @@ const App = () => {
     </UserInfoProvider>
 
     </>
+>>>>>>> Stashed changes
+  )
 }

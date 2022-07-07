@@ -73,7 +73,7 @@ export function ComicList({navigation}){
     }, [reload]);
         return( 
         <View style={styles.container}>
-            <Text style={styles.title}>Comics</Text>
+            <Text style={styles.title}>Herois</Text>
              {loading ? 
                 <Text style={styles.title}>...Loading...</Text>
                 : 
