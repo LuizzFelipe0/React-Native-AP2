@@ -7,13 +7,15 @@ import apiService from '../../services/requests'
 import { ComicCard } from '../../components/ComicCard';
 import {ModalStats} from '../../components/Modais/ModalStats';
 import { ScrollView } from 'react-native-gesture-handler';
-
 export interface Images{
     path:string,
     extension:string
 }
 export interface ComicPrice{
     price:Number,
+}
+export interface ComicDate{
+    date:Date,
 }
 export interface comic{
     id: Number,
@@ -37,7 +39,12 @@ export interface comicList{
     thumbnail:{
         "path":string,
         "extension":string
-    }
+    },
+    pageCount:Number,
+    format:string,
+    dates:[
+        ComicDate
+    ]
 }
     
 export function ComicList({navigation}){
@@ -46,7 +53,6 @@ export function ComicList({navigation}){
     const [comicId, setComicId] = useState<Number>()
     const [loading, setLoading] = useState<boolean>(true);
     const [reload, setReload] = useState<boolean>(false);
-    //const [modalVisibility,setModalVisibility]=useState<boolean>(true);
 
     //apagar depois
      AsyncStorage.setItem("@publicKey", "77e494c4516148e6430389b7f72228fc");
@@ -90,7 +96,6 @@ export function ComicList({navigation}){
                     renderItem={({ item }) => {
                         
                         return <ComicCard
-                            //setModalVisibility={setModalVisibility}
                             setComicId={setComicId}
                             item={item}
                         />
@@ -98,12 +103,6 @@ export function ComicList({navigation}){
                     
                 />
             }
-            {/* {comicId && <ModalStats
-                ComicId={comicId}
-               ModalVisibility={modalVisibility}
-                setModalVisibility={setModalVisibility}
-            />
-            } */}
         </View>
     )
 }

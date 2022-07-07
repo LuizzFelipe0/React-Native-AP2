@@ -4,12 +4,13 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fff',
         padding: 5,
-        borderRadius: 20,
+        borderRadius: 40,
         alignItems: 'center',
         alignSelf:'center',
         marginVertical: 5,
         flexDirection: "column",
-        width:300,
+        width:325,
+        
     },
     button: {
         backgroundColor: '#ED1D24',
@@ -30,7 +31,7 @@ export const styles = StyleSheet.create({
     text: {
         marginLeft: 5,
         color: '#FFF',
-        fontSize: 22,
+        fontSize: 18,
         fontWeight: 'bold',
     },
     image: {

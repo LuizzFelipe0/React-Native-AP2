@@ -45,5 +45,27 @@ export const styles = StyleSheet.create({
     borderWidth: 2.5,
     borderColor: '#FFF',
   },
-
+  block:{
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    backgroundColor:"#FFF",
+    margin:50,
+    borderRadius:30,
+    padding:50,
+    borderColor:'#fff',
+    borderWidth:2.5
+    
+  },
+  input: {
+    backgroundColor:'#121015',
+    color: '#fff',
+    fontSize: 15,
+    padding: 20,
+    paddingleft: 10,
+    marginTop: 30,
+    borderRadius: 10,
+    width: 190,
+    
+},
 })
