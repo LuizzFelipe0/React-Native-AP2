@@ -17,7 +17,7 @@ export const Registration = () => {
 
     function handleSubmit() {
         connectData.administrador="false"
-        Auth.Registration(connectData).then().catch(error => console.log(error));
+        Auth.Registration(connectData).then(()=>console.log("deu certo")).catch(error => console.log(error.response.data));
     };
 
     return (
