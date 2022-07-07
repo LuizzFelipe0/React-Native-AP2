@@ -3,8 +3,8 @@ import { View, Text, TouchableOpacity, TextInput, } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import md5 from 'md5';
 import apiService from '../../services/requests'
-
 import { styles } from "./styles";
+import axios from "axios";
 
 export const Login = () => {
     const [email, SetEmail] = useState<string>("pedro@gmail.com");
@@ -27,6 +27,7 @@ export const Login = () => {
         }
     }
 
+ 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>

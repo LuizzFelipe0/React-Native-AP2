@@ -8,7 +8,7 @@ export const api = axios.create({
 }) 
 
 export const apiAuth = axios.create({
-    baseURL: "http://192.168.1.15:8080/",
+    baseURL: "http://localhost:3000/",
     headers: {
         'Content-Type': 'application/json',
     }

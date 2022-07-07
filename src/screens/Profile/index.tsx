@@ -45,10 +45,10 @@ export const Profile = () => {
         <View style={styles.header}>
             <Image style={styles.image} source={{ uri: "https://see.fontimg.com/api/renderfont4/Dj83/eyJyIjoiZnMiLCJoIjo3NCwidyI6MTAwMCwiZnMiOjc0LCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiI0YyMTAxMCIsInQiOjF9/TWV1IFBlcmZpbA/marvel-regular.png" }} />
         </View>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginBottom:10 }}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginBottom: 10 }}>
             {image && <Image source={{ uri: image }} style={styles.avatar} />}
-             <Text style={styles.text}>Nome</Text>
-             <Botao onPress={pickImage}/>
+            <Text style={styles.text}>Nome</Text>
+            <Botao onPress={pickImage} />
         </View>
     </View>
     );

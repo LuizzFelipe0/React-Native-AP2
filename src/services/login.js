@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 
-class services extends Component {
+export  services extends Component {
 
     state = {
         name: 'Pedro',
@@ -12,7 +12,7 @@ class services extends Component {
     
     onRequest = async () => {
         try {
-            const res = await axios.post('http://10.0.3.2:3000/posts', { ...this.state});
+            const res = await axios.post('http://localhost:3000/posts/1', { ...this.state});
             return res.data;
         } catch (error) {
             console.log('erro: ', error)

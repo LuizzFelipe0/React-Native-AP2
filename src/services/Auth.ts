@@ -4,8 +4,8 @@ const Login = (loginData)=>{
     return apiAuth.post(`login`,loginData)
 }
 
-const Registration = (cadastroData)=>{
-    return apiAuth.post(`usuarios`,cadastroData)
+const Registration = ()=>{
+    return apiAuth.post(`profile`)
 }
 
 

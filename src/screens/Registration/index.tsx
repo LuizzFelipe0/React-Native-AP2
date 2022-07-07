@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, TextInput, ScrollView, } from "react-native";
-
 import { styles } from "./styles";
 import Auth from "../../services/Auth";
 
