@@ -11,7 +11,7 @@ export interface user{
     administrador:string
 }
 
-export const Registration = () => {
+export const Registration = ({navigation}) => {
     const [connectData, setConnectData] = useState<user>();
 
     function handleSubmit() {
