@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Image, Text, ScrollView, TouchableOpacity, Button } from "react-native"
+import { View, Image, Text, ScrollView, TouchableOpacity, Button, TextInput } from "react-native"
 import { styles } from "./styles"
 import * as ImagePicker from 'expo-image-picker';
 import { ImageInfo } from 'expo-image-picker/build/ImagePicker.types'
@@ -42,14 +42,18 @@ export const Profile = () => {
     };
 
     return (<View style={styles.container}>
-        <View style={styles.header}>
-            <Image style={styles.image} source={{ uri: "https://see.fontimg.com/api/renderfont4/Dj83/eyJyIjoiZnMiLCJoIjo3NCwidyI6MTAwMCwiZnMiOjc0LCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiI0YyMTAxMCIsInQiOjF9/TWV1IFBlcmZpbA/marvel-regular.png" }} />
+        <View >
+            <Text style={styles.header}>Meu Perfil</Text>
         </View>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', marginBottom: 10 }}>
-            {image && <Image source={{ uri: image }} style={styles.avatar} />}
-            <Text style={styles.text}>Nome</Text>
-            <Botao onPress={pickImage} />
+        <View style={styles.block}>
+            {image && <Image source={{ uri: image }} style={styles.avatar}  />}
+            <Text style={styles.text}>Nome:Luiz</Text>
+            <Text style={styles.text1}>Email:luizfelipe@email.com</Text>
+            <TextInput style={styles.input} placeholder={"Descrição"} placeholderTextColor={'#808080'}  />
+
         </View>
+        <Botao onPress={pickImage} />
+
     </View>
     );
 }
