@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { View, Image, Text, ScrollView, TouchableOpacity, Button, TextInput } from "react-native"
 import { styles } from "./styles"
 import * as ImagePicker from 'expo-image-picker';
 import { ImageInfo } from 'expo-image-picker/build/ImagePicker.types'
 import Botao from './button';
-
+import { UserInfoContext } from '../../contexts/UserInfoProvider';
+import Auth from "../../services/Auth";
 
 export declare type ImagePickerResult = {
     cancelled: true;
@@ -24,7 +25,8 @@ export declare type ImageInfo = {
 };
 export const Profile = () => {
     const [image, setImage] = useState(null);
-
+    const email = useContext(UserInfoContext).user[0].email
+    const [nome,setNome] = useState<string>();
     const pickImage = async () => {
         // No permissions request is necessary for launching the image library
         let result = await ImagePicker.launchImageLibraryAsync({
@@ -41,14 +43,21 @@ export const Profile = () => {
         }
     };
 
+    useEffect (() => {   
+        Auth.FindUserByEmail(email).then((res) => {
+        setNome(res.data.usuarios[0].nome);
+         console.log(res.data.usuarios[0].nome)   
+        })
+        }, []);
+
     return (<View style={styles.container}>
         <View >
             <Text style={styles.header}>Meu Perfil</Text>
         </View>
         <View style={styles.block}>
             {image && <Image source={{ uri: image }} style={styles.avatar}  />}
-            <Text style={styles.text}>Nome:Luiz</Text>
-            <Text style={styles.text1}>Email:luizfelipe@email.com</Text>
+            <Text style={styles.text}>Nome: {nome}</Text>
+            <Text style={styles.text1}>Email:{email}</Text>
             <TextInput style={styles.input} placeholder={"Descrição"} placeholderTextColor={'#808080'}  />
 
         </View>

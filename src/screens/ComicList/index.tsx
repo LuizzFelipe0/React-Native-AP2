@@ -15,6 +15,9 @@ export interface Images{
 export interface ComicPrice{
     price:Number,
 }
+export interface ComicDate{
+    date:Date,
+}
 export interface comic{
     id: Number,
     title:string,
@@ -37,7 +40,12 @@ export interface comicList{
     thumbnail:{
         "path":string,
         "extension":string
-    }
+    },
+    pageCount:Number,
+    format:string,
+    dates:[
+        ComicDate
+    ]
 }
     
 export function ComicList({navigation}){

@@ -43,6 +43,9 @@ export const Registration = ({navigation}) => {
                     Cadastrar-se
                 </Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.button}>
+                <Text style={styles.buttonText}>Already have an account? Login here!</Text>
+            </TouchableOpacity>
         </View>
     )
 }

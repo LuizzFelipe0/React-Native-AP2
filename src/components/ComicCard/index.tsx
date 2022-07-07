@@ -21,20 +21,22 @@ export function ComicCard({ item,setComicId, ...rest } : ComicCardProps ) {
             <Text style={styles.title}>
                 {item.title}
             </Text>
+            <View style={{flexDirection:'row'}}>
         <Image source={{
             uri:item.thumbnail.path+"/portrait_fantastic."+item.thumbnail.extension
-            }} style={styles.image}
+            }} style={[styles.image,{marginTop:15}]}
             />
-        <TouchableOpacity 
-            style={styles.button}
-            onPress={()=>HandleOpenModal()}
-            {...rest}
-        >
-            <Text style={styles.text}>
-              ${(item.prices[0].price)}
-            </Text>
-            
-        </TouchableOpacity>
+        <Text style={[styles.text,{color:'#000'},{marginTop:15}]}>
+              Price: ${(item.prices[0].price)}{'\n'}
+              Page Count: ${(item.pageCount)}{'\n'}
+              Preço: ${(item.prices[0].price)}{'\n'}
+              Preço: ${(item.prices[0].price)}{'\n'}
+        </Text>
+        
+        </View>
+        <Text style={[styles.text,{color:'#000'}]}>
+            {'\n'}
+        </Text>
 </View>
         
     )
