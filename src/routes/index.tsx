@@ -74,7 +74,7 @@ function MyTabs() {
 
 function MyStack() {
     return (
-        <Stack.Navigator initialRouteName="Login"
+        <Stack.Navigator initialRouteName="Registration"
             screenOptions={{
                 headerShown: false
             }}>
