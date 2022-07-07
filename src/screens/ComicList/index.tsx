@@ -53,11 +53,7 @@ export function ComicList({navigation}){
     const [comicId, setComicId] = useState<Number>()
     const [loading, setLoading] = useState<boolean>(true);
     const [reload, setReload] = useState<boolean>(false);
-
-    //apagar depois
-     AsyncStorage.setItem("@publicKey", "77e494c4516148e6430389b7f72228fc");
-     AsyncStorage.setItem("@privateKey", "8368e5953e101d85c5ba546899972007fc3032fb")
-    //
+    
         async function auth() {
         
             const publicKey = await AsyncStorage.getItem("@publicKey");
