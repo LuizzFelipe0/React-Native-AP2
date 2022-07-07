@@ -11,7 +11,7 @@ export interface user{
     password:string,
 }
 
-export const Registration = () => {
+export const Registration = ({navigation}) => {
     const [connectData, setConnectData] = useState<user>();
     const [error, setError] = useState<string>();
     function handleSubmit() {

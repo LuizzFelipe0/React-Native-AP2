@@ -4,9 +4,12 @@ import { Login } from './src/screens/Login';
 import { MarvelList } from './src/screens/MarvelList';
 import { ComicList } from './src/screens/ComicList';
 import { Registration } from './src/screens/Registration';
+import { Router } from './src/routes';
+
 
 export default function App() {
   return (
-    <Registration/>
+    <Router/>
+    // <Registration/>
   )
 }

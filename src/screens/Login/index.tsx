@@ -6,7 +6,7 @@ import apiService from '../../services/requests'
 
 import { styles } from "./styles";
 
-export const Login = () => {
+export const Login = ({navigation}) => {
     const [email, SetEmail] = useState<string>("pedro@gmail.com");
     const [password, setPassword] = useState<string>("123456");
 

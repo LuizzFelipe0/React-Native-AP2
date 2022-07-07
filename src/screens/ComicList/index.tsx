@@ -40,7 +40,7 @@ export interface comicList{
     }
 }
     
-export function ComicList(){
+export function ComicList({navigation}){
 
     const [comicsList, setComicsList] = useState<comicList[]>([]);
     const [comicId, setComicId] = useState<Number>()
