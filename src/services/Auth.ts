@@ -8,7 +8,10 @@ const Registration = (cadastroData)=>{
     return apiAuth.post(`usuarios`,cadastroData)
 }
 
+const FindUserByEmail = (email:string)=>{
+    return apiAuth.get(`usuarios?email=${email}`)
+}
 
 export default {
-    Login, Registration
+    Login, Registration,FindUserByEmail
 }
