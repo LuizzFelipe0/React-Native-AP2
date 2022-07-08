@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { user } from "../../screens/Login";
+import { user } from "../../screens/Registration";
 
 export interface UserInfoType {
    user?:user[]
@@ -10,6 +10,7 @@ export const UserInfoContext = createContext<UserInfoType>({
     user:[{
         email:"",
         password:"",
+        username:""
     }],
     setUser:(user:user[])=>{}
 })

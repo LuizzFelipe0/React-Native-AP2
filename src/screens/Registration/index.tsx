@@ -50,7 +50,7 @@ export const Registration = ({navigation}) => {
                                 style={styles.input}
                                 placeholder="Password"
                             />
-            <TouchableOpacity style={[styles.button, { marginBottom: 30 }, { marginTop: 30 }]} onPress={handleRegistrationub}>
+            <TouchableOpacity style={[styles.button, { marginBottom: 30 }, { marginTop: 30 }]} onPress={handleSubmit}>
                 <Text style={styles.buttonText}>
                     Cadastrar-se
                 </Text>
