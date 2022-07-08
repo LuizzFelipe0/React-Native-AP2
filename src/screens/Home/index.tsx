@@ -3,7 +3,7 @@ import {View, Text, Image} from "react-native";
 import { styles } from "./styles";
 import LogoMarvel from "../../assets/images/Marvel_Logo.png";
 import UniversoMarvel from "../../assets/images/Universo_Marvel.png";
-
+import Auth from "../../services/Auth";
     useEffect (() => {   
         Auth.FindUserByEmail(email).then((res) => {
             setNome(res.data.usuarios[0].nome);
